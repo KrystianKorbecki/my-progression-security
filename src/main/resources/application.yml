@@ -1,6 +1,19 @@
 spring:
   application:
     name: security-service
+  liquibase:
+    change-log: db/changelog/liquibase-changeLog.xml
+    password: 2556
+    user: postgres
+    url: jdbc:postgresql://localhost:5432/my_progression_security
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: none
+  r2dbc:
+    url: r2dbc:postgresql://localhost:5432/my_progression_security
+    username: postgres
+    password: 2556
 server:
   port: 8082
 eureka:
